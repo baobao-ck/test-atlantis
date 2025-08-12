@@ -1,14 +1,13 @@
-resource "random_uuid" "test" {
-  count = var.num_of_uuids
+
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
 }
 
-resource "aws_instance" "web" {
-  count         = var.instance_count
-  ami           = "ami-04f8d7ed2f1a54b14"
-  instance_type = "t2.micro"
+resource "aws_s3_bucket" "bucket" {
+  bucket = "test-atlantis-bucket-${random_id.bucket_suffix.hex}"
 
   tags = {
-    Name          = "TestEC2"
+    Name          = "TestS3"
     ProvisionedBy = "Atlantis"
   }
 }
