@@ -10,3 +10,12 @@ resource "aws_s3_bucket" "bucket" {
     ProvisionedBy = "Atlantis"
   }
 }
+
+resource "aws_dynamodb_table" "dynamodb_table" {
+  name = "test-atlantis-dynamodb-table-${random_id.bucket_suffix.hex}"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+}
