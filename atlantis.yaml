@@ -3,9 +3,7 @@ projects:
   - dir: .
     autoplan:
       when_modified: ["*.tf", "*.tfvars", "backend.tf"]
-      enabled: true
 
   - dir: tools
     autoplan:
       when_modified: ["tools/**/*.tf", "tools/**/*.tfvars"]
-      enabled: true
