@@ -2,10 +2,18 @@ version: 3
 projects:
   - dir: .
     autoplan:
-      when_modified: ["*.tf", "*.tfvars", "backend.tf"]
       enabled: true
+      when_modified:
+        - "*.tf"
+        - "*.tfvars"
+        - "backend.tf"
 
   - dir: tools
     autoplan:
-      when_modified: ["*.tf", "../modules/**/*.tf"]
       enabled: true
+      when_modified:
+        - "tools/*.tf"
+        - "tools/**/*.tf"
+        - "tools/*.tfvars"
+        - "tools/**/*.tfvars"
+        - "modules/**/*.tf"     # if you want tools project to plan when modules change
