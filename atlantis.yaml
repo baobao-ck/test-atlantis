@@ -2,11 +2,18 @@ version: 3
 automerge: false
 
 projects:
-  - name: all
+  - name: root
     dir: .
-    workflow: default
     autoplan:
+      enabled: true
       when_modified:
         - "*.tf"
         - "*.tfvars"
+
+  - name: tools
+    dir: tools
+    autoplan:
       enabled: true
+      when_modified:
+        - "tools/**/*.tf"
+        - "tools/**/*.tfvars"
