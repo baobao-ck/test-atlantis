@@ -1,0 +1,11 @@
+.
+└── Atlantis/
+    ├── Plan/
+    │   ├── 1. create PR/
+    │   │   └── plan folder have file change in PR
+    │   └── 2. comment "atlantis plan -d network" <= plan folder network
+    └── Apply/
+        ├── 0. comment "atlantis apply -d network" <= apply folder network/
+        │   └── retry until success
+        └── 1. merge PR/
+            └── no action
