@@ -1,5 +1,11 @@
 version: 3
 projects:
-   - dir: tools
-     autoplan:
-        when_modified: ["../modules/**/*.tf", "tools/*.tf*", ".terraform.lock.hcl"]
+  - dir: .
+    autoplan:
+      when_modified: ["*.tf", "*.tfvars", "backend.tf"]
+      enabled: true
+
+  - dir: tools
+    autoplan:
+      when_modified: ["tools/**/*.tf", "tools/**/*.tfvars"]
+      enabled: true
