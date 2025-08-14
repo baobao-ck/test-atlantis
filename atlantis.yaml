@@ -1,12 +1,5 @@
 version: 3
 projects:
-  - dir: .
-    autoplan:
-      enabled: true
-      when_modified:
-        - "*.tf"
-        - "*.tfvars"
-        - "backend.tf"
 
   - dir: tools
     autoplan:
