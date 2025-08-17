@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "test-network-bucket-${random_id.bucket_suffix.hex}"
 
   tags = {
-    Name          = "TestS3"
+    Name          = "Test-network"
     ProvisionedBy = "Atlantis"
   }
 }
