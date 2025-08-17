@@ -1,12 +1,75 @@
+# Specify the version of the atlantis.yaml configuration
 version: 3
-projects:
 
-  - dir: tools
+projects:
+  - name: airweave-dev
+    dir: apps/airweave/dev
     autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
       enabled: true
-      when_modified:
-        - "tools/*.tf"
-        - "tools/**/*.tf"
-        - "tools/*.tfvars"
-        - "tools/**/*.tfvars"
-        - "modules/**/*.tf"     # if you want tools project to plan when modules change
+  - name: airweave-prod
+    dir: apps/airweave/prod
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: billing-be-dev
+    dir: apps/billing-be/dev
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: enterprise-kotae-dev
+    dir: apps/enterprise-kotae/dev
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: enterprise-kotae-prod
+    dir: apps/enterprise-kotae/prod
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: kleversuite-dev
+    dir: apps/kleversuite/dev
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: public-kotae-dev
+    dir: apps/public-kotae/dev
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: public-kotae-prod
+    dir: apps/public-kotae/prod
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+        - "./regions/**/*.tf"
+      enabled: true
+  - name: network
+    dir: network
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true
+  - name: shared-services
+    dir: shared-services
+    autoplan:
+      when_modified: 
+        - "*.tf"
+        - "../modules/**/*.tf"
+      enabled: true

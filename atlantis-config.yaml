@@ -1,0 +1,6 @@
+enable-diff-markdown-format: true
+web-basic-auth: true
+checkout-strategy: merge
+disable-apply-all: true
+parallel-plan: false
+log-level: info
