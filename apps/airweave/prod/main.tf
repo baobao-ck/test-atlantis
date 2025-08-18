@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "test-prod-airweave-bucket-${random_id.bucket_suffix.hex}"
 
   tags = {
-    Name          = "Test-airweave-prod-2"
+    Name          = "Test-airweave-prod"
     ProvisionedBy = "Atlantis"
   }
 }
